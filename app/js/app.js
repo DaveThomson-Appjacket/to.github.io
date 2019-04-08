@@ -1,7 +1,9 @@
 function get_json(){
   $.get("./app/json/site.json", function(data){
     var div = $("<div/>");
-    $(div).text = JSON.stringify(data);
+    var span = $("<span/>");
+    $(span).text = JSON.stringify(data);
+    $(div).append(span);
     $("main").append(div);
   });
 }
