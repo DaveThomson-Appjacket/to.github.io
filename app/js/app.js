@@ -62,7 +62,7 @@ function set_sections(data){
         
         var contact_card = $("<div/>");
         contact_card.addClass("col");
-        $(current_row).addClass("bg-secondary");
+        $(contact_card).addClass("bg-secondary");
         
         if(heading.text() != ""){
           contact_card.append(heading);
@@ -82,7 +82,7 @@ function set_sections(data){
           $(current_row).append(contact_card)
         }else {
           console.log("%2 key is: " + key);
-          $(current_row).addClass("bg-info");
+          $(contact_card).addClass("bg-info");
           $(current_row).append(contact_card)
           $(span_paragraphs).append(current_row);
           current_row = $("<div/>");
