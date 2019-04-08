@@ -53,11 +53,11 @@ function set_sections(data){
         $(span_paragraphs).append(span);
         */
       }else{
-        /*
+        
         var heading = $("<span/>");
         heading.addClass("heading");
         heading.text(value["heading"]);
-        */
+        
         var contact_card = $("<div/>");
         contact_card.addClass("");
         //contact_card.append(heading);
