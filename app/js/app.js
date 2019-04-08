@@ -79,10 +79,10 @@ function set_sections(data){
         console.log("Key is: " + key);
         if((key-1) % 2 != 0){
           $(current_row).append(contact_card)
-          $(current_row).css("background-color",".bg-secondary");
+          $(current_row).addClass("bg-secondary");
         }else {
           console.log("%2 key is: " + key);
-          $(current_row).css("background-color",".bg-info");
+          $(current_row).addClass("bg-info");
           $(current_row).append(contact_card)
           $(span_paragraphs).append(current_row);
           current_row = $("<div/>");
