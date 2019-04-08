@@ -40,27 +40,24 @@ function set_sections(data){
     $(card).addClass("card");
     $(span_heading).text(value["section"]);
     $.each(value["paragraphs"], function(key, value){
-      var heading = $("<span/>");
-      heading.addClass("heading");
-      heading.text(value["heading"]);
       if(value["content"].length == 1){
         console.log(value["content"]);
         var p = $("<p/>");
         p.text(value["content"]["paragraph_body"]);
         $(span_paragraphs).append(p);
       }else{
+        var heading = $("<span/>");
+        heading.addClass("heading");
+        heading.text(value["heading"]);
+        var contact_card = $("<div/>");
+        contact_card.addClass("card");
+        contact_card.append(heading);
         $.each(value["content"], function(key, value){
-          var contact_card = $("<div/>");
-          var phone_number = $("<span/>");
-          var email_address = $("<span/>");
-          phone_number.text(value["item-title"] + ":\t\t" + value["item-content"]);      
-          email_address.text(value["item-title"] + ":\t\t" + value["item-content"]);
-          contact_card.addClass("card");
-          contact_card.append(heading);
-          contact_card.append(phone_number);
-          contact_card.append(email_address);
-          $(span_paragraphs).append(contact_card);
+          var item = $("<span/>");
+          item.text(value["item-title"] + ":\t\t" + value["item-content"]);      
+          contact_card.append(item);
         });
+        $(span_paragraphs).append(contact_card);
       }
     });
     $(card).append(span_heading);
