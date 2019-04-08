@@ -3,7 +3,8 @@ function get_json(){
     var main = $("main")[0];
     var div = $("<div/>");
     var span = $("<span/>");
-    $(span).text = JSON.stringify(data);
+    //$(span).text = JSON.stringify(data);
+    $(span).text = "hello dave";
     $(div).append(span);
     $(main).append(span);
   });
