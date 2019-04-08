@@ -27,6 +27,7 @@ function set_logo(data){
 }
 function set_sections(data){
   var main = $("main")[0];
+
   $.each(data["content-sections"], function(key, value){
     var row = $("<div/>");
     var div = $("<div/>");
@@ -62,13 +63,14 @@ function set_sections(data){
         
         var contact_card = $("<div/>");
         contact_card.addClass("col");
-        $(contact_card).addClass("bg-secondary");
+        $(contact_card).addClass("bg-info");
         
         if(heading.text() != ""){
           contact_card.append(heading);
         }
-        
+        var counter = 0;
         $.each(value["content"], function(key, value){
+          counter++;
           var item = $("<span/>");
           if(value["item-title"] == ""){
             item.text(value["item-content"]);
@@ -77,17 +79,18 @@ function set_sections(data){
           }
           contact_card.append(item);
         });
-        console.log("Key is: " + key);
         if((key-1) % 2 != 0){
           $(current_row).append(contact_card)
         }else {
-          console.log("%2 key is: " + key);
           $(contact_card).addClass("bg-info");
           $(current_row).append(contact_card)
           $(span_paragraphs).append(current_row);
           current_row = $("<div/>");
           $(current_row).addClass("row");
-          //$(current_row).append(contact_card); 
+          if(counter%4 == 0){
+            var newCanvas = $('<canvas/>',{'class':'glass', 'color':'white','alpha':.35}).width($(current_row).width()).height($(current_row).height());
+            $(current_row).append(newCanvas);
+          $(contact_card).addClass(
         } 
         $(span_paragraphs).append(current_row);
         
