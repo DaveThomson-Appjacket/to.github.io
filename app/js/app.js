@@ -38,6 +38,7 @@ function set_sections(data){
     $(span_heading).text(value["section"]);
     $.each(value["paragraphs"], function(key, value){
       if(value["content"].length == 1){
+        /*
         var span = $("<span/>");
         $.each(value["content"], function(key, value){
           var item = $("<p/>");
@@ -50,6 +51,7 @@ function set_sections(data){
           }
         });
         $(span_paragraphs).append(span);
+        */
       }else{
         var heading = $("<span/>");
         heading.addClass("heading");
