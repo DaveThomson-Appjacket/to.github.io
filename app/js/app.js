@@ -40,13 +40,14 @@ function set_sections(data){
     $(card).addClass("card");
     $(span_heading).text(value["section"]);
     $.each(value["paragraphs"], function(key, value){
-      var p = $("<p/>");
       var heading = $("<span/>");
       heading.addClass("heading");
       heading.text(value["heading"]);
-      console.log(value["content"]);
       if(value["content"].length == 1){
+        console.log(value["content"]);
+        var p = $("<p/>");
         p.text(value["content"]["paragraph_body"]);
+        $(span_paragraphs).append(p);
       }else{
         $.each(value["content"], function(key, value){
           var contact_card = $("<div/>");
@@ -58,9 +59,9 @@ function set_sections(data){
           contact_card.append(heading);
           contact_card.append(phone_number);
           contact_card.append(email);
+          $(span_paragraphs).append(contact_card);
         });
       }
-      $(span_paragraphs).append(p);
     });
     $(card).append(span_heading);
     $(card).append(span_paragraphs);
