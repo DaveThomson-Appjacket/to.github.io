@@ -40,6 +40,7 @@ function set_sections(data){
         var span = $("<span/>");
         $.each(value["content"], function(key, value){
           var item = $("<p/>");
+          console.log("." + value["item-content"] + ".");
           if(value["item-title"] == ""){
             item.text(value["item-content"]);
           }else{
