@@ -26,7 +26,7 @@ function set_logo(data){
   var half_len_nav = Math.floor(len_nav/2);
   var image = $("<img/>");
   $(image).attr("src",data["site-logo"]);
-  $(".nav")[half_len_nav].sibling(image);
+  $(".nav").children[half_len_nav].append(image);
 }
 function get_sections(){
 }
