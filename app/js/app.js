@@ -1,6 +1,8 @@
 function get_json(){
   $.get("./app/json/site.json", function(data){
-  alert(JSON.stringify(data));
+    var div = $("<div/>");
+    $(div).text = JSON.stringify(data);
+    $(main).append(div);
   });
 }
 function get_title(){
