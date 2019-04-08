@@ -41,7 +41,24 @@ function set_sections(data){
     $(span_heading).text(value["section"]);
     $.each(value["paragraphs"], function(key, value){
       var p = $("<p/>");
-      p.text(value["content"]);
+      var heading = $("<span/>");
+      heading.addClass("heading");
+      heading.text(value["heading"]);
+      if(value["content"}.length == 1){
+        p.text(value["content"]);
+      }else{
+        $.each(value["content"], function(key, value){
+          var contact_card = $("<div/>");
+          var phone_number = $("<span/>");
+          var email = $("<span/>");
+          phone_number.text("phone number:\t\t" + value["phone-number"]);      
+          email.text=("email:\t\t" + value["email"]);
+          contact_card.addClass("card");
+          contact_card.append(heading);
+          contact_card.append(phone_number);
+          contact_card.append(email);
+        });
+      }
       $(span_paragraphs).append(p);
     });
     $(card).append(span_heading);
