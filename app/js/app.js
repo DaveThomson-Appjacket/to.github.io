@@ -44,6 +44,7 @@ function set_sections(data){
       var heading = $("<span/>");
       heading.addClass("heading");
       heading.text(value["heading"]);
+      console.log(value["content"]);
       if(value["content"].length == 1){
         p.text(value["content"]["paragraph_body"]);
       }else{
