@@ -7,6 +7,7 @@ function get_json(){
     set_title(data);
     set_navs(data);
     set_logo(data);
+    set_sections(data);
   });
 }
 function set_title(data){
@@ -31,7 +32,22 @@ function set_logo(data){
   $(image).addClass("heading-logo");
   $(".nav").children().eq([half_len_nav - 1]).after(image);
 }
-function get_sections(){
+function set_sections(data){
+  $.each(data["content-sections"], function(key, value){
+    var div = $("<div/>");
+    var card = $("<div/>");
+    var span_heading = $("<span/>");
+    var span_paragraphs = $("<span/>");
+    $(div).addClass("section");
+    $(card).addClass("card");
+    $(span_heading).text(value["section"]);
+    $.each(value["paragraphs"], function(key, value){
+      var p = $("<p/>");
+      p.text(value["content"]);
+      $(span_paragraphs).append(p);
+    });
+    
+  });
 }
 $(document).ready(function(){
   get_json();
