@@ -79,12 +79,14 @@ function set_sections(data){
         if((key-1) % 2 != 0){
           $(current_row).append(contact_card)
         }else if(key % 2 != 0){
+          console.log("key is: " + key);
           $(current_row).append(contact_card)
           $(span_paragraphs).append(current_row);
           current_row = $("<div/>");
           $(current_row).addClass("row");
           //$(current_row).append(contact_card); 
         } else {
+          console.log("got an else!");
           $(current_row).append(contact_card)
           $(span_paragraphs).append(current_row);
         }
