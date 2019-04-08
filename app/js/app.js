@@ -13,6 +13,7 @@ function set_title(data){
 }
 function set_navs(data){
  $.each(data["content-sections"], function(key, value){
+   console.log(key);
    var section = value;
    var span = $("<span/>");
    span.text(section);
