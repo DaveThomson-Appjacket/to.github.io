@@ -86,7 +86,24 @@
               }
               ]
           },
+          {
+            "heading-number":4,
+            "heading":"mailing address",
+            "content":[
+              {
+                "item-title":"address",
+                "item-content":"747 Third Avenue, 2nd Floor, New York, NY 10017"
+              },
+              {
+                 "item-title":"phone number",
+                 "item-content":"212-335-0751" 
+              },
+                            {
+                 "item-title":"general email address",
+                 "item-content":"admin@thomsonollunga.com" 
+              }
+              ]
+          }
         ]
     }
-  ],
 }
