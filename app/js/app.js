@@ -52,13 +52,13 @@ function set_sections(data){
         $.each(value["content"], function(key, value){
           var contact_card = $("<div/>");
           var phone_number = $("<span/>");
-          var email = $("<span/>");
-          //phone_number.text("phone number:\t\t" + value["phone-number"]);      
-          email.text=("email:\t\t" + value["email"]);
+          var email_address = $("<span/>");
+          phone_number.text("phone number:\t\t" + value["phone-number"]);      
+          email_address.text=("email:\t\t" + value["email"]);
           contact_card.addClass("card");
           contact_card.append(heading);
           contact_card.append(phone_number);
-          contact_card.append(email);
+          contact_card.append(email_address);
           $(span_paragraphs).append(contact_card);
         });
       }
