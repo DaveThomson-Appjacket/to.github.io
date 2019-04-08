@@ -6,6 +6,7 @@ function get_json(){
     $(main).append(span);
     set_title(data);
     set_navs(data);
+    set_logo(data);
   });
 }
 function set_title(data){
