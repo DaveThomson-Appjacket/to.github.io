@@ -82,7 +82,7 @@ function set_sections(data){
           $(current_row).css("background-color",".bg-secondary");
         }else {
           console.log("%2 key is: " + key);
-          $(current_row).css("background-color",".bg-info";
+          $(current_row).css("background-color",".bg-info");
           $(current_row).append(contact_card)
           $(span_paragraphs).append(current_row);
           current_row = $("<div/>");
