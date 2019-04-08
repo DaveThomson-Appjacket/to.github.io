@@ -60,7 +60,7 @@ function set_sections(data){
         */
         var contact_card = $("<div/>");
         contact_card.addClass("");
-        contact_card.append(heading);
+        //contact_card.append(heading);
         $.each(value["content"], function(key, value){
           var item = $("<span/>");
           if(value["item-title"] == ""){
