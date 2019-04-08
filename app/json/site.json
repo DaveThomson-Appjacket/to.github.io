@@ -1,0 +1,15 @@
+{
+  "site-title":"TO LLP",
+  "site-logo":"./app/images/thomsonollungallp-logo.png",
+  "navbar-groups":
+    [
+      {
+      "text":"about",
+      "link":"#"
+      },
+      {
+      "text":"contact",
+      "link":"#"
+      }
+    ]
+}
