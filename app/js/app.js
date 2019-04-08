@@ -1,16 +1,28 @@
 function get_json(){
   $.get("./app/json/site.json", function(data){
     var main = $("main")[0];
-    var div = $("<div/>");
     var span = $("<span/>");
     $(span).text(JSON.stringify(data));
-    $(div).append(span);
     $(main).append(span);
+    set_title(data);
+    set_navs(data);
   });
 }
-function get_title(){
+function set_title(data){
+  $("site-title").text(data["site-title"]);
 }
-function get_logo(){
+function set_navs(data){
+ $.each(data["content-sections"], function(key, value){
+   var section = value;
+   $(".nav").append(section);
+ });
+}
+function set_logo(data){
+  var len_nav = $(".nav").len
+  var half_len_nav = floor(len_nav/2);
+  var image = $("<img/>");
+  $(image).attr("src",data["site-logo"]);
+  $(".nav")[half_len_nav].sibling(image);
 }
 function get_sections(){
 }
