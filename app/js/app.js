@@ -44,7 +44,7 @@ function set_sections(data){
       var heading = $("<span/>");
       heading.addClass("heading");
       heading.text(value["heading"]);
-      if(value["content"}.length == 1){
+      if(value["content"].length == 1){
         p.text(value["content"]);
       }else{
         $.each(value["content"], function(key, value){
