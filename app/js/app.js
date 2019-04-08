@@ -61,7 +61,7 @@ function set_sections(data){
         heading.text(value["heading"]);
         
         var contact_card = $("<div/>");
-        contact_card.addClass("");
+        contact_card.addClass("col");
         
         if(heading.text() != ""){
           contact_card.append(heading);
@@ -83,8 +83,7 @@ function set_sections(data){
           $(span_paragraphs).append(current_row);
           current_row = $("<div/>");
           $(current_row).addClass("row");
-          $(current_row).append(contact_card)
-          
+          //$(current_row).append(contact_card); 
         }
         //$(span_paragraphs).append(current_row);
       }
