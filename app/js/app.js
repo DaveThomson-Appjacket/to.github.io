@@ -1,5 +1,5 @@
 function get_json(){
-  $.get("./app/json/app.json", function(data){
+  $.get("./app/json/site.json", function(data){
   alert(JSON.stringify(data));
   });
 }
