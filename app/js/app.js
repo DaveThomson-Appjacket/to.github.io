@@ -16,7 +16,7 @@ function set_navs(data){
    var section = value;
    var span = $("<span/");
    span.text(section);
-   $(".nav").append(span-);
+   $(".nav").append(span);
  });
 }
 function set_logo(data){
