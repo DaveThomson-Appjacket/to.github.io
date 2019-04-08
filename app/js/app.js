@@ -95,7 +95,7 @@ function set_sections(data){
         
         //$(span_paragraphs).append(current_row);
       }
-    });
+
     $(div).append(span_heading);
     $(div).append(span_paragraphs);
     $(row).append(div);
