@@ -14,7 +14,9 @@ function set_title(data){
 function set_navs(data){
  $.each(data["content-sections"], function(key, value){
    var section = value;
-   $(".nav").append(section);
+   var span = $("<span/");
+   span.text(section);
+   $(".nav").append(span-);
  });
 }
 function set_logo(data){
