@@ -29,7 +29,7 @@ function set_logo(data){
   var image = $("<img/>");
   $(image).attr("src",data["site-logo"]);
   $(image).addClass("heading-logo");
-  $(".nav").children().eq([half_len_nav - 1]).append(image);
+  $(".nav").children().eq([half_len_nav - 1]).after(image);
 }
 function get_sections(){
 }
