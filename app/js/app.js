@@ -22,7 +22,7 @@ function set_navs(data){
  });
 }
 function set_logo(data){
-  var len_nav = $(".nav").len
+  var len_nav = $(".nav").children.length;
   var half_len_nav = floor(len_nav/2);
   var image = $("<img/>");
   $(image).attr("src",data["site-logo"]);
