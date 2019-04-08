@@ -16,9 +16,11 @@ function set_navs(data){
  $.each(data["content-sections"], function(key, value){
    console.log(key);
    var section = value;
+   var link = $("<a/>");
+   link.text(value["section"]);
    var span = $("<span/>");
    span.text(section);
-   $(".nav").append(span);
+   $(".nav").append(link);
  });
 }
 function set_logo(data){
