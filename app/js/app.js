@@ -53,8 +53,8 @@ function set_sections(data){
           var contact_card = $("<div/>");
           var phone_number = $("<span/>");
           var email_address = $("<span/>");
-          phone_number.text("phone number:\t\t-ph" + value["phone-number"]);      
-          email_address.text=("email:\t\t-e" + value["email"]);
+          phone_number.text(value["item-title"] + ":\t\t" + value["item-content"]);      
+          email_address.text(value["item-title"] + ":\t\t" + value["item-content"]);
           contact_card.addClass("card");
           contact_card.append(heading);
           contact_card.append(phone_number);
