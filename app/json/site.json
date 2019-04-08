@@ -56,6 +56,7 @@
                 "item-title":"email",
                 "item-content":"sam@thomsonollunga.com"
               },
+              {
                 "item-title":"phone-number",
                 "item-content":"212-335-0751 x 503"
               }
@@ -69,6 +70,7 @@
                 "item-title":"email",
                 "item-content":"alwyn@thomsonollunga.com"
               },
+              {
                 "item-title":"phone-number",
                 "item-content":"212-335-0751 x 504"
               }
@@ -82,6 +84,7 @@
                 "item-title":"email",
                 "item-content":"juliet@thomsonollunga.com"
               },
+              {
                 "item-title":"phone-number",
                 "item-content":"212-335-0751 x 505"
               }
