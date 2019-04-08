@@ -4,7 +4,7 @@ function get_json(){
     var span = $("<span/>");
     $(span).text = JSON.stringify(data);
     $(div).append(span);
-    $("main").append(div);
+    $("main")[0].append(div);
   });
 }
 function get_title(){
