@@ -2,7 +2,7 @@ function get_json(){
   $.get("./app/json/site.json", function(data){
     var div = $("<div/>");
     $(div).text = JSON.stringify(data);
-    $(main).append(div);
+    $("main").append(div);
   });
 }
 function get_title(){
