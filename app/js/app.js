@@ -33,6 +33,7 @@ function set_logo(data){
   $(".nav").children().eq([half_len_nav - 1]).after(image);
 }
 function set_sections(data){
+  var main = $("main")[0];
   $.each(data["content-sections"], function(key, value){
     var div = $("<div/>");
     var card = $("<div/>");
@@ -49,7 +50,7 @@ function set_sections(data){
     $(card).append(span_heading);
     $(card).append(span_paragraphs);
     $(div).append(card);
-    $("main")[0].append(div);
+    $(main).append(div);
   });
 }
 $(document).ready(function(){
