@@ -44,8 +44,8 @@ function set_sections(data){
       var heading = $("<span/>");
       heading.addClass("heading");
       heading.text(value["heading"]);
-      if(value["content"].length == 0){
-        p.text(value["content"]);
+      if(value["content"].length == 1){
+        p.text(value["content"]["paragraph_body"]);
       }else{
         $.each(value["content"], function(key, value){
           var contact_card = $("<div/>");
