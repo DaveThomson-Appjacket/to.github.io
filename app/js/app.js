@@ -36,6 +36,8 @@ function set_sections(data){
     $(row).addClass("row");
   
     $(span_heading).text(value["section"]);
+    var current_row = $("<div/>");
+    $(current_row).addClass("row");
     $.each(value["paragraphs"], function(key, value){
       if(value["content"].length == 1){
         /*
@@ -60,9 +62,11 @@ function set_sections(data){
         
         var contact_card = $("<div/>");
         contact_card.addClass("");
+        
         if(heading.text() != ""){
           contact_card.append(heading);
         }
+        
         $.each(value["content"], function(key, value){
           var item = $("<span/>");
           if(value["item-title"] == ""){
@@ -72,7 +76,17 @@ function set_sections(data){
           }
           contact_card.append(item);
         });
-        $(span_paragraphs).append(contact_card);
+        if(key % 2 != 0){
+          $(current_row).append(contact_card)
+        }else{
+          $(current_row).append(contact_card)
+          $(span_paragraphs).append(current_row);
+          current_row = $("<div/>");
+          $(current_row).addClass("row");
+          $(current_row).append(contact_card)
+          
+        }
+        //$(span_paragraphs).append(current_row);
       }
     });
     $(div).append(span_heading);
