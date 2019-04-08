@@ -29,14 +29,12 @@ function set_sections(data){
   var main = $("main")[0];
   $.each(data["content-sections"], function(key, value){
     var div = $("<div/>");
-    var card = $("<div/>");
+    var row = $("<div/>");
     var span_heading = $("<span/>");
     var span_paragraphs = $("<span/>");
-    span_paragraphs.addClass("row");
+    span_paragraphs.addClass("");
     $(div).addClass("section");
-    $(card).addClass("card");
-    var row = $("<div/>");
-    row.addClass("row");
+    $(row).addClass("row");
     $(span_heading).text(value["section"]);
     $.each(value["paragraphs"], function(key, value){
       if(value["content"].length == 1){
