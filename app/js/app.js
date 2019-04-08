@@ -32,8 +32,11 @@ function set_sections(data){
     var card = $("<div/>");
     var span_heading = $("<span/>");
     var span_paragraphs = $("<span/>");
+    span_paragraphs.addClass("row");
     $(div).addClass("section");
     $(card).addClass("card");
+    var row = $("<div/>");
+    row.addClass("row");
     $(span_heading).text(value["section"]);
     $.each(value["paragraphs"], function(key, value){
       if(value["content"].length == 1){
