@@ -69,9 +69,9 @@ function set_sections(data){
         $(span_paragraphs).append(contact_card);
       }
     });
-    $(card).append(span_heading);
-    $(card).append(span_paragraphs);
-    $(div).append(card);
+    $(row).append(span_heading);
+    $(row).append(span_paragraphs);
+    $(div).append(row);
     $(main).append(div);
   });
 }
