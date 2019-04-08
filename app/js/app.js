@@ -46,7 +46,10 @@ function set_sections(data){
       p.text(value["content"]);
       $(span_paragraphs).append(p);
     });
-    
+    $(card).append(span_heading);
+    $(card).append(span_paragraphs);
+    $(div).append(card);
+    $("main")[0].append(div);
   });
 }
 $(document).ready(function(){
