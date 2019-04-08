@@ -76,6 +76,7 @@ function set_sections(data){
           }
           contact_card.append(item);
         });
+        console.log("Key is: " + key);
         if((key-1) % 2 != 0){
           $(current_row).append(contact_card)
         }else if(key % 2 != 0){
