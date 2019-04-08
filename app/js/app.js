@@ -38,9 +38,14 @@ function set_sections(data){
     $.each(value["paragraphs"], function(key, value){
       if(value["content"].length == 1){
         console.log(value["content"]);
-        var p = $("<p/>");
-        p.text(value["content"]["paragraph_body"]);
-        $(span_paragraphs).append(p);
+        var span = $("<span/>");
+        span.text(value["content"]["paragraph_body"]);
+        $.each(value["content"], function(key, value){
+          var item = $("<p/>");
+          item.text(value["item-title"] + ":\t\t" + value["item-content"]);      
+          span.append(item);
+        });
+        $(span_paragraphs).append(span);
       }else{
         var heading = $("<span/>");
         heading.addClass("heading");
