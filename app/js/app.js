@@ -78,12 +78,15 @@ function set_sections(data){
         });
         if((key-1) % 2 != 0){
           $(current_row).append(contact_card)
-        }else{
+        }else if(key % 2 != 0){
           $(current_row).append(contact_card)
           $(span_paragraphs).append(current_row);
           current_row = $("<div/>");
           $(current_row).addClass("row");
           //$(current_row).append(contact_card); 
+        } else {
+          $(current_row).append(contact_card)
+          $(span_paragraphs).append(current_row);
         }
         //$(span_paragraphs).append(current_row);
       }
