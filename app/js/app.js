@@ -28,13 +28,13 @@ function set_logo(data){
 function set_sections(data){
   var main = $("main")[0];
   $.each(data["content-sections"], function(key, value){
-    var div = $("<div/>");
     var row = $("<div/>");
+    var div = $("<div/>");
     var span_heading = $("<span/>");
     var span_paragraphs = $("<span/>");
-    span_paragraphs.addClass("");
-    $(div).addClass("section");
+    
     $(row).addClass("row");
+  
     $(span_heading).text(value["section"]);
     $.each(value["paragraphs"], function(key, value){
       if(value["content"].length == 1){
@@ -69,10 +69,10 @@ function set_sections(data){
         $(span_paragraphs).append(contact_card);
       }
     });
-    $(row).append(span_heading);
-    $(row).append(span_paragraphs);
-    $(div).append(row);
-    $(main).append(div);
+    $(div).append(span_heading);
+    $(div).append(span_paragraphs);
+    $(row).append(div);
+    $(main).append(row);
   });
 }
 $(document).ready(function(){
