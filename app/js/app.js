@@ -90,7 +90,6 @@ function set_sections(data){
           if(counter%4 == 0){
             var newCanvas = $('<canvas/>',{'class':'glass', 'color':'white','alpha':.35}).width($(current_row).width()).height($(current_row).height());
             $(current_row).append(newCanvas);
-          $(contact_card).addClass(
         } 
         $(span_paragraphs).append(current_row);
         
