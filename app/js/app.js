@@ -58,7 +58,11 @@ function set_sections(data){
         contact_card.append(heading);
         $.each(value["content"], function(key, value){
           var item = $("<span/>");
-          item.text(value["item-title"] + ":\t\t" + value["item-content"]);      
+          if(value["item-title"] == ""){
+            item.text(value["item-content"]);
+          }else{
+            item.text(value["item-title"] + ":\t\t" + value["item-content"]);      
+          }
           contact_card.append(item);
         });
         $(span_paragraphs).append(contact_card);
