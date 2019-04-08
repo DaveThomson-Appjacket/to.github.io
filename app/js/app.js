@@ -23,7 +23,7 @@ function set_navs(data){
 }
 function set_logo(data){
   var len_nav = $(".nav").children.length;
-  var half_len_nav = floor(len_nav/2);
+  var half_len_nav = Math.floor(len_nav/2);
   var image = $("<img/>");
   $(image).attr("src",data["site-logo"]);
   $(".nav")[half_len_nav].sibling(image);
