@@ -89,7 +89,7 @@ function set_sections(data){
           $(current_row).addClass("row");
           if(counter%4 == 0){
             var newCanvas = $('<canvas/>',{'class':'glass', 'color':'white','alpha':1}).width($(current_row).width()).height($(current_row).height());
-            $(current_row).append(newCanvas);
+            $(contact_card).append(newCanvas);
           }
         } 
         $(span_paragraphs).append(current_row);
