@@ -1,4 +1,10 @@
 /* stylelint-disable selector-list-comma-newline-after */
+.content-with-padding {
+  padding-bottom: 2em;
+  padding-left:2em;
+  padding-right:2em;
+  padding-top:2em;
+}
 .heading-logo {
   width: 19em;
   height: 100%;
