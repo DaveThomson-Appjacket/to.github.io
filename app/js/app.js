@@ -1,18 +1,16 @@
 function get_json(){
   $.get("./app/json/site.json", function(data){
-    set_title(data);
-    set_navs(data);
-    set_logo(data);
-    set_sections(data);
-    set_map();
+	  stuff(data);
   });
 }
+function stuff(data){
+	set_title(data);
+    	set_navs(data);
+    	set_logo(data);
+    	set_sections(data);
+    	//set_map();
+}
 function set_map(){
-  var image = $("<img/>");
-  image.attr("src","https://maps.googleapis.com/maps/api/staticmap?center=Manhattan,New+York,NY&zoom=13&size=800x600&maptype=roadmap&markers=color:red%7Clabel:TO%7C40.7534846, -73.9720523&key=AIzaSyAte4Xiod-xNtnin6kSE1n1wHkvF9RtECo");
-  var main = $('main')[0];
-	$(image).css({"left":"0","bottom":"0"});
-  $(main).append($(image));
 }
 function set_title(data){
   $("site-title").text(data["site-title"]);
@@ -21,30 +19,39 @@ function set_navs(data){
  $.each(data["content-sections"], function(key, value){
    console.log(key);
    var link = $("<a/>");
-   link.text(value["section"]);
+   link.text();
    $(".nav").append(link);
  });
 }
 function set_logo(data){
-  var len_nav = $(".nav").children.length;
-  var half_len_nav = Math.floor(len_nav/2);
-  var image = $("<img/>");
-  $(image).attr("src",data["site-logo"]);
-  $(image).addClass("heading-logo");
-  $(".nav").children().eq([half_len_nav - 1]).after(image);
+  		var len_nav = $(".nav").children.length;
+  		var half_len_nav = Math.floor(len_nav/2);
+  		var div = $("<div/>");
+  		$(div).addClass("d-flex");
+  		$(div).addClass("justify-content-center");
+  		var wrapper = $("<div/>");
+  		$(wrapper).addClass("brand");
+  		var image = $("<img/>");
+  		$(image).attr("src",data["site-logo"]);
+  		$(image).addClass("heading-logo");
+  		$(wrapper).append($(image));
+  		$(div).append($(wrapper));
+  		var insertion_point = $(".nav").children()[half_len_nav];
+  		$(insertion_point).before(div);
 }
 function set_sections(data){
   var main = $("main")[0];
   var canvas = $("<div/>");
 	console.log($(main).width());
 	console.log($(main).height());
-  $(canvas).width($(main).width()).height("100%");
+  $(canvas).width($(main).width()).height($(window).height());
 	$(canvas).addClass("canvas");
   //$(canvas).css("background-color","rgba(255, 255, 255, 0.5)");
 	$(main).append(canvas);
-  $(main).css({"background-image":"url(./app/images/new-york-city-336475_1920.jpg)"});
+	$(main).addClass("main-class");
+  //////$(main).css({"background-image":"url(./app/images/new-york-city-336475_1920.jpg)"});
 
-	$(canvas).css({"justify-content":"center"});
+	////$(canvas).css({"justify-content":"center"});
   $.each(data["content-sections"], function(key, value){
     var row = $("<div/>");
 	$(row).width("100%");
@@ -53,7 +60,7 @@ function set_sections(data){
     var span_paragraphs = $("<div/>");
     
     $(row).addClass("container").addClass("row");
-        (main).append(canvas);
+        ////(main).append(canvas);
     $(span_heading).text(value["section"]);
 
 	  $(span_heading).css("color","white");
@@ -153,6 +160,31 @@ function set_sections(data){
 	  $(canvas).addClass("content-section");
   });
 }
+function set_onscroll_sticky_header(){
+	window.onscroll = function() {cleanupSticky()};
+
+	// Get the navbar
+	var navbar = $(".nav-scroller.py-1.mb-2")[0];
+
+	// Get the offset position of the navbar
+	var sticky = $(navbar).position().top;
+
+	console.log(sticky);
+
+	// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+	function cleanupSticky() {
+	  if (window.pageYOffset >= sticky) {
+	    $(navbar).addClass("sticky");
+	  } else {
+	    $(navbar).removeClass("sticky");
+	  }
+	}
+}
 $(document).ready(function(){
   get_json();
+  //set_onscroll_sticky_header();
 });
+window.onload = function(){
+	console.log($(".heading-logo").height());
+	$(".navbar").height($(".heading-logo").height());
+};

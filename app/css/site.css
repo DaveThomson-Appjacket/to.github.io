@@ -1,3 +1,14 @@
+.brand {
+    position: absolute;
+    left: 50%;
+    margin-left: -20em !important;  /* 50% of your logo width */
+    display: block;
+}
+.main-class {
+	background-image:url("../images/new-york-city-336475_1920.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 /* stylelint-disable selector-list-comma-newline-after */
 .content-with-padding {
   padding-bottom: 2em;
@@ -6,7 +17,7 @@
   padding-top:2em;
 }
 .heading-logo {
-  width: 19em;
+  width: 40em;
   height: 100%;
 }
 .blog-header {
@@ -37,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-scroller {
-  position: relative;
+  position: relative; 
   z-index: 2;
   height: 2.75rem;
   overflow-y: hidden;

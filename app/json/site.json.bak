@@ -3,6 +3,14 @@
   "site-logo":"./app/images/thomsonollungallp-logo.png",
   "navbar-groups":
     [
+      {
+      "text":"about",
+      "link":"#"
+      },
+      {
+      "text":"contact",
+      "link":"#"
+      }
     ],
   "content-sections":
   [
