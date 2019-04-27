@@ -8,28 +8,24 @@
   [
     {
       "section":"about",
-      "paragraphs":
+      "section-details":
         [
           {
-            "heading-number":0,
+            "section-number":0,
             "heading":"",
             "content":[{
                 "item-title":"",
                 "item-content":"Thomson-Ollunga LLP is a full service law firm based out of New York, NY. With satellite offices in LA and Toronto Thomson-Ollunga can operate in many jurisdictions."
-              },
-            {
-                "item-title":"",
-                "item-content":"Thomson-Ollunga focuses on Entertainment, and Contract law for that main industry. We also provide Litigation and other services through our staff of experts."
               }]
           }
         ]
     },
     {
       "section":"contact",
-      "paragraphs":
+      "section-details":
         [
           {
-            "heading-number":0,
+            "section-number":0,
             "heading":"Kevin Thomson",
             "content":[
               {
@@ -43,7 +39,7 @@
               ]
           },
           {
-            "heading-number":1,
+            "section-number":1,
             "heading":"Samuel Ollunga",
             "content":[
               {
@@ -57,7 +53,7 @@
               ]
           },
           {
-            "heading-number":2,
+            "section-number":2,
             "heading":"Alwyn Phillips",
             "content":[
               {
@@ -71,7 +67,7 @@
               ]
           },
           {
-            "heading-number":3,
+            "section-number":3,
             "heading":"Juliet Gobler",
             "content":[
               {
@@ -85,7 +81,7 @@
               ]
           },
           {
-            "heading-number":4,
+            "section-number":4,
             "heading":"Mailing Address",
             "content":[
               {
@@ -96,13 +92,58 @@
                  "item-title":"phone number",
                  "item-content":"212-335-0751" 
               },
-                            {
+              {
                  "item-title":"general email address",
                  "item-content":"admin@thomsonollunga.com" 
               }
               ]
           }
         ]
+    },
+    {
+	"section":"specialties",
+	"specialties":[
+		{
+			"specialties":"Kevin Thomson specializes in contract and music rights.",
+			"contact_details":{
+				"name": "Kevin Thomson",
+				"phone_number":"555-555-5555",
+				"email":"kevin@thomsonollunga.com"
+			}
+		},
+		{
+			"specialties":"Sam Ollunga is licensed in New York.",
+                        "contact_details":{
+                                "name": "Sam Ollunga",
+                                "phone_number":"555-555-5555",
+                                "email":"sam@thomsonollunga.com"
+                        }
+		},
+		{
+			"specialties": "Alwyn Phillips specializes in immigration law.",
+                        "contact_details":{
+                                "name": "Alwyn Phillips",
+                                "phone_number":"555-555-5555",
+                                "email":"alwyn@thomsonollunga.com"
+                        }
+		},
+		{
+			"specialties":"Juliet Gobler specializes in litigation.",
+                        "contact_details":{
+                                "name": "Juliet Gobler",
+                                "phone_number":"555-555-5555",
+                                "email": "juliet@thomsonollunga.com"
+                        }
+		},
+		{
+			"specialties":"General Inquiries.",
+                        "contact_details":{
+                                "name": "General Inquiries",
+                                "phone_number":"555-555-5555",
+                                "email":"admin@thomsonollunga.com"
+                        }
+		}
+	]
     }
     ]
 }

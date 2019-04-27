@@ -1,7 +1,9 @@
 body {
-  padding-top: 6em;
+  padding-top: 12vh;
+  color: white;
 }
 .navbar {
 	background-color: white;
-	height: 88px;
+	height: 12vh;
+	min-height:12vh;
 }

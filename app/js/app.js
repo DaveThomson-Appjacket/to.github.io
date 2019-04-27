@@ -7,8 +7,59 @@ function stuff(data){
 	set_title(data);
     	set_navs(data);
     	set_logo(data);
-    	set_sections(data);
+	set_about(data);
+	set_contact(data);
+    	//set_sections(data);
     	//set_map();
+}
+function set_about(data){
+	var content_sections = data["content-sections"];
+	$.each(content_sections, function(key, value){
+		if(value["section"] == "about"){
+			var div = $("<div/>");
+			var body = $("<h1/>");
+
+			$(div).addClass("container").addClass("about-section");
+			$(body).addClass("container").addClass("about-section");
+			$(div).append($(body));
+
+			$(".about").append($(div));
+
+			var section_details = value["section-details"][0];
+			var content = section_details["content"];
+			var item = content[0];
+			//$(heading).text("about");
+			$(body).text(item["item-content"])
+		}
+	});
+	$(".about").width($("nav").width()).height($(window).height());
+}
+function set_contact(data){
+	var content_sections = data["content-sections"];
+        $.each(content_sections, function(key, value){
+                if(value["section"] == "contact"){
+                        var div = $("<div/>");
+			var row = $("<div/>");
+                        var body = $("<h1/>");
+
+                        $(row).addClass("row");
+                        $(body).addClass("container").addClass("about-section");
+                        $(div).append($(body));
+
+                        $(".contact").append($(div));
+
+                        var section_details = value["section-details"];
+                        var content = section_details["content"];
+                        var item = content[0];
+                        //$(heading).text("about");
+                        $(body).text(item["item-content"])
+			$.each(section_details, function(){
+				$(body).text(item["item-content"])
+
+			});
+                }
+        });
+        $(".contact").width($("nav").width()).height($(window).height());
 }
 function set_map(){
 }
@@ -40,10 +91,10 @@ function set_logo(data){
   		$(insertion_point).before(div);
 }
 function set_sections(data){
-  var main = $("main")[0];
+  //var main = $(".about");
   var canvas = $("<div/>");
-	console.log($(main).width());
-	console.log($(main).height());
+//	console.log($(main).width());
+//	console.log($(main).height());
   $(canvas).width($(main).width()).height($(window).height());
 	$(canvas).addClass("canvas");
   //$(canvas).css("background-color","rgba(255, 255, 255, 0.5)");
@@ -64,6 +115,8 @@ function set_sections(data){
     $(span_heading).text(value["section"]);
 
 	  $(span_heading).css("color","white");
+
+    var section_name = "";
 
     var current_row = $("<div/>");
     $(current_row).addClass("row");
@@ -102,6 +155,7 @@ function set_sections(data){
 		$(item).css("color","white");
           if(value["item-title"] == ""){
             item.text(value["item-content"]);
+	    section_name = "about";
           }else{
 		  if(value["item-title"]=="email" || value["item-title"]=="general email address"){
 			  var link = $("<a/>");
@@ -114,22 +168,6 @@ function set_sections(data){
             		item.text(value["item-title"] + ":\t\t" + value["item-content"]);      
 		  }
           }
-	//$(contact_card).css({"border-width":"thin","border-color":"black","border-style":"solid"});
-	  switch(outer_key){
-		case 0:
-		case 3:
-			  //$(contact_card).addClass("bg-secondary");
-			  break;
-		case 1:
-		case 2:
-			  //$(contact_card).addClass("bg-info");
-			  break;
-		case 4:
-			  //$(contact_card).addClass("bg-warning");
-			  break;
-		default:
-			  $(contact_card).addClass("");
-	  }
           contact_card.append(item);
 		contact_card.append("</br>");
 		contact_card.addClass("content-with-padding");
@@ -157,7 +195,7 @@ function set_sections(data){
 	  $(div2).addClass("content-with-padding");
     $(row).append(div2);
     $(canvas).append(row);
-	  $(canvas).addClass("content-section");
+	  //$(canvas).addClass("content-section");
   });
 }
 function set_onscroll_sticky_header(){
