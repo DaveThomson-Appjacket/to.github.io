@@ -33,7 +33,7 @@ function set_about(data){
 			$(body).text(item["item-content"])
 		}
 	});
-	$(".about").width($("nav").width()).height($(window).height());
+	$(".about").width($(window).width()).height($(window).height());
 }
 function set_contact(data){
 	var content_sections = data["content-sections"];

@@ -1,5 +1,9 @@
+.search_box_div{
+	padding-top: 12vh;
+}
+
 .brand {
-    position: absolute;
+    position: relative;
     left: 50%;
     display: block;
     transform: translateX(-50%);
