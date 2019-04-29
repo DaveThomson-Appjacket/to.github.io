@@ -114,32 +114,7 @@ function set_contact(data){
 		}
 	});
 
-        /*
-	 * $.each(content_sections, function(key, value){
-                if(value["section"] == "contact"){
-                        var div = $("<div/>");
-			var row = $("<div/>");
-                        var body = $("<h1/>");
-
-                        $(row).addClass("row");
-                        $(body).addClass("container").addClass("about-section");
-                        $(div).append($(body));
-
-                        $(".contact").append($(div));
-
-                        var section_details = value["section-details"];
-                        var content = section_details["content"];
-                        var item = content[0];
-                        //$(heading).text("about");
-                        $(body).text(item["item-content"])
-			$.each(section_details, function(){
-				$(body).text(item["item-content"])
-
-			});
-                }
-        });
-	*/
-        $(".contact").width($("nav").width());//.height($(window).height());
+        $(".contact").width($("nav").width());
 }
 function set_search_data(data){
 	var content_sections = data["content-sections"];
