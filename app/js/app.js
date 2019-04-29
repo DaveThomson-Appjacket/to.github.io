@@ -86,7 +86,7 @@ function set_contact(data){
 				$(address).append($(address_heading));
 				$(address).append($(address_span));
 				
-				$(this).find(".name_section").after($(address));
+				$(this).find(".phone_number_section").after($(address));
 				$(this).find(".name_section").remove();
 			}
 			try{
