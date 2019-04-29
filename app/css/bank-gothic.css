@@ -1,5 +1,10 @@
+@font-face {
+        font-family: "BankGothic";
+        src: url("../fonts/bankgothic-regular.ttf");
+}
+
 .bank-gothic h1,span,h3,a{
-  font-family: "BankGothic";
+  font-family: "BankGothic", Arial;
   font-weight:normal;
   font-style:normal;
 }
