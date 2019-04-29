@@ -31,17 +31,17 @@
 				"contact_details":{
 					"name": "Kevin Thomson",
 					"image":"adult-beautiful-canvas-1300527.jpg",
-					"phone_number":"555-555-5555",
+					"phone_number":"212-335-0751 x 501",
 					"email_address":"kevin@thomsonollunga.com"
 				}
 			},
 			{
 				"id":2,
-				"specialties":"Sam Ollunga is licensed in New York.",
+				"specialties":"Samuel Ollunga is licensed in New York.",
                 	        "contact_details":{
-                       		         "name": "Sam Ollunga",
+                       		         "name": "Samuel Ollunga",
 					 "image":"adult-beautiful-canvas-1300527.jpg",
-                       		         "phone_number":"555-555-5555",
+                       		         "phone_number":"212-335-0751 x 503",
                                 	 "email_address":"sam@thomsonollunga.com"
                         	}
 			},
@@ -51,7 +51,7 @@
                         	"contact_details":{
                                 	"name": "Alwyn Phillips",
 					"image":"adult-beautiful-canvas-1300527.jpg",
-                                	"phone_number":"555-555-5555",
+                                	"phone_number":"212-335-0751 x 504",
                                 	"email_address":"alwyn@thomsonollunga.com"
                         	}
 			},
@@ -61,7 +61,7 @@
                         	"contact_details":{
                         	        "name": "Juliet Gobler",
 					"image":"attractive-beautiful-beautiful-eyes-1405982.jpg",
-                               		"phone_number":"555-555-5555",
+                               		"phone_number":"212-335-0751 x 505",
                                 	"email_address": "juliet@thomsonollunga.com"
                         	}
 			},
@@ -72,7 +72,8 @@
                 	                "name": "General Inquiries",
 					"image":"thomsonollungallp-logo.png",
                 	                "phone_number":"555-555-5555",
-                	                "email_address":"admin@thomsonollunga.com"
+                	                "email_address":"admin@thomsonollunga.com",
+					"address": "747 Third Avenue, 2nd Floor, New York, NY 10017"
                 	        }
 			}
 		]

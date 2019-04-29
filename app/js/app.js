@@ -55,8 +55,8 @@ function set_contact(data){
 	
 	$.each(section_documents, function(index, value){
 		var contact_card = $("<div/>");
-		contacts_row.addClass("contacts-row").addClass("d-flex").addClass("flex-row").addClass("justify-content-around");
-		contact_card.addClass("contact-card").addClass("col-6");
+		contacts_row.addClass("contacts-row").addClass("d-flex").addClass("flex-row").addClass("justify-content-around").addClass("flex-wrap");
+		contact_card.addClass("contact-card").addClass("col-md-5").addClass("col-xs-12");
 		contact_card.load("./app/html/contact_card.tmpl", function(){
 			var contact_image = $("<img/>");
 			var image_path = "./app/images/" + value["contact_details"]["image"];
@@ -75,11 +75,30 @@ function set_contact(data){
 			}else{
 				$(this).find("img.picture").addClass("general-inquiries");
 				$(this).find(".specialty").remove();
+				var address = $("<div/>");
+				var address_heading = $("<h3/>");
+				var address_span = $("<span/>");
+
+				$(address).addClass("contact_details_section");
+				
+				$(address_heading).text("Address:");
+				$(address_span).text(value["contact_details"]["address"]);
+				$(address).append($(address_heading));
+				$(address).append($(address_span));
+				
+				$(this).find(".name_section").after($(address));
+				$(this).find(".name_section").remove();
 			}
-			$(this).find(".name").text(name);
-			$(this).find(".phone_number").text(phone_number);
-			$(this).find(".email_address").text(email_address);
-			$(this).find("img.picture").attr("src",image_path);
+			try{
+				$(this).find(".name").text(name);
+			}finally{
+				$(this).find(".phone_number").text(phone_number);
+				var phone_number_to_dial = phone_number.replace(/-/g,"").replace(/x/g,"p").replace(/ /g,"");
+				$(this).find(".phone_number").attr("href","tel:+1" + phone_number_to_dial);
+				$(this).find(".email_address").text(email_address);
+				$(this).find(".email_address").attr("href","mailto:" + email_address);
+				$(this).find("img.picture").attr("src",image_path);
+			}
 		});
 
 		$(contacts_row).append(contact_card);
