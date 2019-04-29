@@ -17,6 +17,9 @@
 	border-style: solid;
 	margin: 1em 1em 1em 1em;
 }
+img.picture {
+	padding-top: 1em;
+}
 @media screen and (max-device-width: 1200px){
 	img.picture {
                 height: 10vh;
