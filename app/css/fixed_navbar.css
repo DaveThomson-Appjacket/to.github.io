@@ -3,8 +3,22 @@ body {
   color: white;
   font-family: Arial;
 }
-h1,h3 {
+.arial-font h1,span,h3,a {
   font-family: Arial;
+}
+body.bank-gothic  h1,span,h3,a{
+  font-family: "BankGothic";
+  font-weight:normal;
+  font-style:normal;
+}
+.default-background {
+	background-image:url("../images/new-york-city-336475_1920.jpg");
+}
+.background-1{
+        background-image:url("../images/manhattan-336708_1920.jpg");
+}
+.background-2{
+        background-image:url("../images/manhattan-407703_1920.jpg");
 }
 .navbar {
 	background-color: white;
