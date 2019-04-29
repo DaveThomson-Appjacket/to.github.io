@@ -102,48 +102,56 @@
     },
     {
 	"section":"specialties",
-	"specialties":[
-		{
-			"specialties":"Kevin Thomson specializes in contract and music rights.",
-			"contact_details":{
-				"name": "Kevin Thomson",
-				"phone_number":"555-555-5555",
-				"email":"kevin@thomsonollunga.com"
+	"section-details":
+		{"documents":
+			[
+			{
+				"id":1,
+				"specialties":"Kevin Thomson specializes in contract and music rights.",
+				"contact_details":{
+					"name": "Kevin Thomson",
+					"phone_number":"555-555-5555",
+					"email":"kevin@thomsonollunga.com"
+				}
+			},
+			{
+				"id":2,
+				"specialties":"Sam Ollunga is licensed in New York.",
+                	        "contact_details":{
+                       		         "name": "Sam Ollunga",
+                       		         "phone_number":"555-555-5555",
+                                	 "email":"sam@thomsonollunga.com"
+                        	}
+			},
+			{
+				"id":3,
+				"specialties": "Alwyn Phillips specializes in immigration law.",
+                        	"contact_details":{
+                                	"name": "Alwyn Phillips",
+                                	"phone_number":"555-555-5555",
+                                	"email":"alwyn@thomsonollunga.com"
+                        	}
+			},
+			{
+				"id":4,
+				"specialties":"Juliet Gobler specializes in litigation.",
+                        	"contact_details":{
+                        	        "name": "Juliet Gobler",
+                               		"phone_number":"555-555-5555",
+                                	"email": "juliet@thomsonollunga.com"
+                        	}
+			},
+			{
+				"id":5,
+				"specialties":"General Inquiries.",
+                	        "contact_details":{
+                	                "name": "General Inquiries",
+                	                "phone_number":"555-555-5555",
+                	                "email":"admin@thomsonollunga.com"
+                	        }
 			}
-		},
-		{
-			"specialties":"Sam Ollunga is licensed in New York.",
-                        "contact_details":{
-                                "name": "Sam Ollunga",
-                                "phone_number":"555-555-5555",
-                                "email":"sam@thomsonollunga.com"
-                        }
-		},
-		{
-			"specialties": "Alwyn Phillips specializes in immigration law.",
-                        "contact_details":{
-                                "name": "Alwyn Phillips",
-                                "phone_number":"555-555-5555",
-                                "email":"alwyn@thomsonollunga.com"
-                        }
-		},
-		{
-			"specialties":"Juliet Gobler specializes in litigation.",
-                        "contact_details":{
-                                "name": "Juliet Gobler",
-                                "phone_number":"555-555-5555",
-                                "email": "juliet@thomsonollunga.com"
-                        }
-		},
-		{
-			"specialties":"General Inquiries.",
-                        "contact_details":{
-                                "name": "General Inquiries",
-                                "phone_number":"555-555-5555",
-                                "email":"admin@thomsonollunga.com"
-                        }
+		]
 		}
-	]
     }
     ]
 }
