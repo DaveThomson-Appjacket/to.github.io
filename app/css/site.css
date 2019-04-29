@@ -8,6 +8,16 @@
 	border-style: solid;
 	margin: 1em 1em 1em 1em;
 }
+@media screen
+	and (min-device-width:1600px){
+	img.picture {
+                max-height: 12vh;
+                width: auto;
+        }
+        img.picture.general-inquiries {
+                max-height: 6vh;
+        }
+}
 /* ----------- Non-Retina Screens ----------- */
 @media screen 
   and (min-device-width: 1200px) 
