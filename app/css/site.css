@@ -21,7 +21,7 @@
 	img.picture {
                 height: 10vh;
                 width: auto;
-		padding-top: 2.25em;
+		margin-top: 2.25em;
         }
         img.picture.general-inquiries {
                 max-height: 3vh;
@@ -32,7 +32,7 @@
 	img.picture {
                 max-height: 10vh;
                 width: auto;
-		padding-top: 2.25em;
+		margin-top: 2.25em;
         }
         img.picture.general-inquiries {
                 max-height: 6vh;
@@ -46,7 +46,7 @@
 	img.picture {
                 max-height: 15vh;
                 width: auto;
-		padding-top: 2.25em;
+		margin-top: 2.25em;
 	}
 	img.picture.general-inquiries {
         	max-height: 6vh;
@@ -62,7 +62,7 @@
 	img.picture {
                 max-height: 20vh;
                 width: auto;
-		padding-top: 2.25em;
+		margin-top: 2.25em;
         }
         img.picture.general-inquiries { 
                 max-height: 12vh;
