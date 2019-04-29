@@ -110,8 +110,9 @@
 				"specialties":"Kevin Thomson specializes in contract and music rights.",
 				"contact_details":{
 					"name": "Kevin Thomson",
+					"image":"adult-beautiful-canvas-1300527.jpg",
 					"phone_number":"555-555-5555",
-					"email":"kevin@thomsonollunga.com"
+					"email_address":"kevin@thomsonollunga.com"
 				}
 			},
 			{
@@ -119,8 +120,9 @@
 				"specialties":"Sam Ollunga is licensed in New York.",
                 	        "contact_details":{
                        		         "name": "Sam Ollunga",
+					 "image":"adult-beautiful-canvas-1300527.jpg",
                        		         "phone_number":"555-555-5555",
-                                	 "email":"sam@thomsonollunga.com"
+                                	 "email_address":"sam@thomsonollunga.com"
                         	}
 			},
 			{
@@ -128,8 +130,9 @@
 				"specialties": "Alwyn Phillips specializes in immigration law.",
                         	"contact_details":{
                                 	"name": "Alwyn Phillips",
+					"image":"adult-beautiful-canvas-1300527.jpg",
                                 	"phone_number":"555-555-5555",
-                                	"email":"alwyn@thomsonollunga.com"
+                                	"email_address":"alwyn@thomsonollunga.com"
                         	}
 			},
 			{
@@ -137,17 +140,19 @@
 				"specialties":"Juliet Gobler specializes in litigation.",
                         	"contact_details":{
                         	        "name": "Juliet Gobler",
+					"image":"attractive-beautiful-beautiful-eyes-1405982.jpg",
                                		"phone_number":"555-555-5555",
-                                	"email": "juliet@thomsonollunga.com"
+                                	"email_address": "juliet@thomsonollunga.com"
                         	}
 			},
 			{
 				"id":5,
-				"specialties":"General Inquiries.",
+				"specialties":"General Inquiries",
                 	        "contact_details":{
                 	                "name": "General Inquiries",
+					"image":"thomsonollungallp-logo.png",
                 	                "phone_number":"555-555-5555",
-                	                "email":"admin@thomsonollunga.com"
+                	                "email_address":"admin@thomsonollunga.com"
                 	        }
 			}
 		]
