@@ -35,8 +35,64 @@ function set_about(data){
 	});
 	$(".about").width($(window).width()).height($(window).height());
 }
-function set_contact(data){
+function get_section(data, section_name){
 	var content_sections = data["content-sections"];
+        var section_details, specialties;
+        $.each(content_sections, function(index, value){
+                if(value["section"] == section_name){
+                        section_details = value["section-details"];
+                }
+        });
+	return section_details
+}
+function set_contact(data){
+	var section_name = "specialties"
+	var section_details = get_section(data, section_name);
+	var section_documents = section_details["documents"];
+
+	var contacts = $(".contacts_cards");
+	var contacts_row = $("<div/>");
+	
+	$.each(section_documents, function(index, value){
+		var contact_card = $("<div/>");
+		contacts_row.addClass("contacts-row").addClass("d-flex").addClass("flex-row").addClass("justify-content-around");
+		contact_card.addClass("contact-card").addClass("col-6");
+		contact_card.load("./app/html/contact_card.tmpl", function(){
+			var contact_image = $("<img/>");
+			var image_path = "./app/images/" + value["contact_details"]["image"];
+			var specialties = value["specialties"];
+			var phone_number = value["contact_details"]["phone_number"];
+			var email_address = value["contact_details"]["email_address"];
+			var name = value["contact_details"]["name"];
+
+			//$(contact_image).attr("src",image_path);
+			//var picture = $(this).find(".picture");
+			//picture.append($(contact_image));
+			if(specialties.toLowerCase() != "general inquiries"){
+				var specialties_span = $("<span/>");
+                        	specialties_span.text(specialties);
+				$(this).find(".specialty").append(specialties_span);
+			}else{
+				$(this).find("img.picture").addClass("general-inquiries");
+				$(this).find(".specialty").remove();
+			}
+			$(this).find(".name").text(name);
+			$(this).find(".phone_number").text(phone_number);
+			$(this).find(".email_address").text(email_address);
+			$(this).find("img.picture").attr("src",image_path);
+		});
+
+		$(contacts_row).append(contact_card);
+
+		if((index + 1)%2 == 0){
+			$(contacts).append($(contacts_row));
+			contacts_row = $("<div/>");
+			contacts_row.addClass("contacts-row");
+		}else if(index == 4){
+			$(contacts).append($(contacts_row));
+		}
+	});
+
         /*
 	 * $.each(content_sections, function(key, value){
                 if(value["section"] == "contact"){
@@ -62,7 +118,7 @@ function set_contact(data){
                 }
         });
 	*/
-        $(".contact").width($("nav").width()).height($(window).height());
+        $(".contact").width($("nav").width());//.height($(window).height());
 }
 function set_search_data(data){
 	var content_sections = data["content-sections"];
