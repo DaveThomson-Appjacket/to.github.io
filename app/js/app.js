@@ -55,8 +55,8 @@ function set_contact(data){
 	
 	$.each(section_documents, function(index, value){
 		var contact_card = $("<div/>");
-		contacts_row.addClass("contacts-row").addClass("d-flex").addClass("flex-row").addClass("justify-content-around");
-		contact_card.addClass("contact-card").addClass("col-6");
+		contacts_row.addClass("contacts-row").addClass("d-flex").addClass("flex-row").addClass("justify-content-around").addClass("flex-wrap");
+		contact_card.addClass("contact-card").addClass("col-md-5").addClass("col-xs-12");
 		contact_card.load("./app/html/contact_card.tmpl", function(){
 			var contact_image = $("<img/>");
 			var image_path = "./app/images/" + value["contact_details"]["image"];
