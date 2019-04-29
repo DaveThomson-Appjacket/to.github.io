@@ -1,18 +1,140 @@
 function get_json(){
   $.get("./app/json/site.json", function(data){
-    set_title(data);
-    set_navs(data);
-    set_logo(data);
-    set_sections(data);
-    set_map();
+	  stuff(data);
   });
 }
+function stuff(data){
+	set_title(data);
+    	set_navs(data);
+    	set_logo(data);
+	set_about(data);
+	set_contact(data);
+	set_search_data(data);
+    	//set_sections(data);
+    	//set_map();
+}
+function set_about(data){
+	var content_sections = data["content-sections"];
+	$.each(content_sections, function(key, value){
+		if(value["section"] == "about"){
+			var div = $("<div/>");
+			var body = $("<h1/>");
+
+			$(div).addClass("container").addClass("about-section");
+			$(body).addClass("container").addClass("about-section");
+			$(div).append($(body));
+
+			$(".about").append($(div));
+
+			var section_details = value["section-details"][0];
+			var content = section_details["content"];
+			var item = content[0];
+			//$(heading).text("about");
+			$(body).text(item["item-content"])
+		}
+	});
+	$(".about").width($(window).width()).height($(window).height());
+}
+function get_section(data, section_name){
+	var content_sections = data["content-sections"];
+        var section_details, specialties;
+        $.each(content_sections, function(index, value){
+                if(value["section"] == section_name){
+                        section_details = value["section-details"];
+                }
+        });
+	return section_details
+}
+function set_contact(data){
+	var section_name = "specialties"
+	var section_details = get_section(data, section_name);
+	var section_documents = section_details["documents"];
+
+	var contacts = $(".contacts_cards");
+	var contacts_row = $("<div/>");
+	
+	$.each(section_documents, function(index, value){
+		var contact_card = $("<div/>");
+		contacts_row.addClass("contacts-row").addClass("d-flex").addClass("flex-row").addClass("justify-content-around");
+		contact_card.addClass("contact-card").addClass("col-6");
+		contact_card.load("./app/html/contact_card.tmpl", function(){
+			var contact_image = $("<img/>");
+			var image_path = "./app/images/" + value["contact_details"]["image"];
+			var specialties = value["specialties"];
+			var phone_number = value["contact_details"]["phone_number"];
+			var email_address = value["contact_details"]["email_address"];
+			var name = value["contact_details"]["name"];
+
+			//$(contact_image).attr("src",image_path);
+			//var picture = $(this).find(".picture");
+			//picture.append($(contact_image));
+			if(specialties.toLowerCase() != "general inquiries"){
+				var specialties_span = $("<span/>");
+                        	specialties_span.text(specialties);
+				$(this).find(".specialty").append(specialties_span);
+			}else{
+				$(this).find("img.picture").addClass("general-inquiries");
+				$(this).find(".specialty").remove();
+			}
+			$(this).find(".name").text(name);
+			$(this).find(".phone_number").text(phone_number);
+			$(this).find(".email_address").text(email_address);
+			$(this).find("img.picture").attr("src",image_path);
+		});
+
+		$(contacts_row).append(contact_card);
+
+		if((index + 1)%2 == 0){
+			$(contacts).append($(contacts_row));
+			contacts_row = $("<div/>");
+			contacts_row.addClass("contacts-row");
+		}else if(index == 4){
+			$(contacts).append($(contacts_row));
+		}
+	});
+
+        /*
+	 * $.each(content_sections, function(key, value){
+                if(value["section"] == "contact"){
+                        var div = $("<div/>");
+			var row = $("<div/>");
+                        var body = $("<h1/>");
+
+                        $(row).addClass("row");
+                        $(body).addClass("container").addClass("about-section");
+                        $(div).append($(body));
+
+                        $(".contact").append($(div));
+
+                        var section_details = value["section-details"];
+                        var content = section_details["content"];
+                        var item = content[0];
+                        //$(heading).text("about");
+                        $(body).text(item["item-content"])
+			$.each(section_details, function(){
+				$(body).text(item["item-content"])
+
+			});
+                }
+        });
+	*/
+        $(".contact").width($("nav").width());//.height($(window).height());
+}
+function set_search_data(data){
+	var content_sections = data["content-sections"];
+	var specialties_section_details, specialties;
+	$.each(content_sections, function(index, value){
+		if(value["section"] == "specialties"){
+			specialties_section_details = value["section-details"];
+		}
+	});
+	specialties = specialties_section_details["documents"];
+	$.each(specialties, function(index, value){
+		var doc = value;
+		search_index.addDoc(doc);
+	});
+}
 function set_map(){
-  var image = $("<img/>");
-  image.attr("src","https://maps.googleapis.com/maps/api/staticmap?center=Manhattan,New+York,NY&zoom=13&size=800x600&maptype=roadmap&markers=color:red%7Clabel:TO%7C40.7534846, -73.9720523&key=AIzaSyAte4Xiod-xNtnin6kSE1n1wHkvF9RtECo");
-  var main = $('main')[0];
-	$(image).css({"left":"0","bottom":"0"});
-  $(main).append($(image));
 }
 function set_title(data){
   $("site-title").text(data["site-title"]);
@@ -21,30 +143,39 @@ function set_navs(data){
  $.each(data["content-sections"], function(key, value){
    console.log(key);
    var link = $("<a/>");
-   link.text(value["section"]);
+   link.text();
    $(".nav").append(link);
  });
 }
 function set_logo(data){
-  var len_nav = $(".nav").children.length;
-  var half_len_nav = Math.floor(len_nav/2);
-  var image = $("<img/>");
-  $(image).attr("src",data["site-logo"]);
-  $(image).addClass("heading-logo");
-  $(".nav").children().eq([half_len_nav - 1]).after(image);
+  		var len_nav = $(".nav").children.length;
+  		var half_len_nav = Math.floor(len_nav/2);
+  		var div = $("<div/>");
+  		$(div).addClass("d-flex");
+  		$(div).addClass("justify-content-center");
+  		var wrapper = $("<div/>");
+  		$(wrapper).addClass("brand");
+  		var image = $("<img/>");
+  		$(image).attr("src",data["site-logo"]);
+  		$(image).addClass("heading-logo");
+  		$(wrapper).append($(image));
+  		$(div).append($(wrapper));
+  		var insertion_point = $(".nav").children()[half_len_nav];
+  		$(insertion_point).before(div);
 }
 function set_sections(data){
-  var main = $("main")[0];
+  //var main = $(".about");
   var canvas = $("<div/>");
-	console.log($(main).width());
-	console.log($(main).height());
-  $(canvas).width($(main).width()).height("100%");
+//	console.log($(main).width());
+//	console.log($(main).height());
+  $(canvas).width($(main).width()).height($(window).height());
 	$(canvas).addClass("canvas");
   //$(canvas).css("background-color","rgba(255, 255, 255, 0.5)");
 	$(main).append(canvas);
-  $(main).css({"background-image":"url(./app/images/new-york-city-336475_1920.jpg)"});
+	$(main).addClass("main-class");
+  //////$(main).css({"background-image":"url(./app/images/new-york-city-336475_1920.jpg)"});
 
-	$(canvas).css({"justify-content":"center"});
+	////$(canvas).css({"justify-content":"center"});
   $.each(data["content-sections"], function(key, value){
     var row = $("<div/>");
 	$(row).width("100%");
@@ -53,10 +184,12 @@ function set_sections(data){
     var span_paragraphs = $("<div/>");
     
     $(row).addClass("container").addClass("row");
-        (main).append(canvas);
+        ////(main).append(canvas);
     $(span_heading).text(value["section"]);
 
 	  $(span_heading).css("color","white");
+
+    var section_name = "";
 
     var current_row = $("<div/>");
     $(current_row).addClass("row");
@@ -95,6 +228,7 @@ function set_sections(data){
 		$(item).css("color","white");
           if(value["item-title"] == ""){
             item.text(value["item-content"]);
+	    section_name = "about";
           }else{
 		  if(value["item-title"]=="email" || value["item-title"]=="general email address"){
 			  var link = $("<a/>");
@@ -107,22 +241,6 @@ function set_sections(data){
             		item.text(value["item-title"] + ":\t\t" + value["item-content"]);      
 		  }
           }
-	//$(contact_card).css({"border-width":"thin","border-color":"black","border-style":"solid"});
-	  switch(outer_key){
-		case 0:
-		case 3:
-			  //$(contact_card).addClass("bg-secondary");
-			  break;
-		case 1:
-		case 2:
-			  //$(contact_card).addClass("bg-info");
-			  break;
-		case 4:
-			  //$(contact_card).addClass("bg-warning");
-			  break;
-		default:
-			  $(contact_card).addClass("");
-	  }
           contact_card.append(item);
 		contact_card.append("</br>");
 		contact_card.addClass("content-with-padding");
@@ -150,9 +268,39 @@ function set_sections(data){
 	  $(div2).addClass("content-with-padding");
     $(row).append(div2);
     $(canvas).append(row);
-	  $(canvas).addClass("content-section");
+	  //$(canvas).addClass("content-section");
   });
 }
+function set_onscroll_sticky_header(){
+	window.onscroll = function() {cleanupSticky()};
+
+	// Get the navbar
+	var navbar = $(".nav-scroller.py-1.mb-2")[0];
+
+	// Get the offset position of the navbar
+	var sticky = $(navbar).position().top;
+
+	console.log(sticky);
+
+	// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+	function cleanupSticky() {
+	  if (window.pageYOffset >= sticky) {
+	    $(navbar).addClass("sticky");
+	  } else {
+	    $(navbar).removeClass("sticky");
+	  }
+	}
+}
+var search_index = elasticlunr(function () {
+    this.addField('specialties');
+    this.addField('contact_details');
+    this.setRef('id');
+});
 $(document).ready(function(){
   get_json();
+  //set_onscroll_sticky_header();
 });
+window.onload = function(){
+	console.log($(".heading-logo").height());
+	$(".navbar").height($(".heading-logo").height());
+};
