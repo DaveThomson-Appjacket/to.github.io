@@ -80,7 +80,8 @@ function set_contact(data){
 				var address_span = $("<span/>");
 
 				$(address).addClass("contact_details_section");
-				
+				$(address_heading).addClass("h1-center-aligned");
+
 				$(address_heading).text("Address:");
 				$(address_span).text(value["contact_details"]["address"]);
 				$(address).append($(address_heading));
