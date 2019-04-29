@@ -5,11 +5,8 @@ body {
 }
 .arial-font h1,span,h3,a {
   font-family: Arial;
-}
-body.bank-gothic  h1,span,h3,a{
-  font-family: "BankGothic";
-  font-weight:normal;
-  font-style:normal;
+  font-weight: normal;
+  font-style: normal;
 }
 .default-background {
 	background-image:url("../images/new-york-city-336475_1920.jpg");

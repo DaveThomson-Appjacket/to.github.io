@@ -18,10 +18,17 @@
 .contacts_cards > h1, div{
 	color: grey;
 }
-.contact-card {
+/*
+ * .contact-card {
 	border-style: solid;
 	margin: 1em 1em 1em 1em;
 }
+*/
+	/*
+.cc-noborder {
+	border-style: none;
+}
+*/
 @media screen and (max-device-width: 1200px){
 	img.picture {
                 height: 10vh;

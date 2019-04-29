@@ -319,7 +319,3 @@ $(document).ready(function(){
   get_json();
   //set_onscroll_sticky_header();
 });
-window.onload = function(){
-	console.log($(".heading-logo").height());
-	$(".navbar").height($(".heading-logo").height());
-};

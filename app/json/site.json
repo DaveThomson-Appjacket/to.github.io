@@ -47,7 +47,7 @@
 			},
 			{
 				"id":3,
-				"specialties": "Alwyn Phillips specializes in immigration law.",
+				"specialties": "Alwyn Phillips specializes in immigration law.  From Wikipedia:  Immigration is the international movement of people into a destination country of which they are not natives or where they do not possess citizenship in order to settle or reside there, especially as permanent residents or naturalized citizens, or to take up employment as a migrant worker or temporarily as a foreign worker.",
                         	"contact_details":{
                                 	"name": "Alwyn Phillips",
 					"image":"adult-beautiful-canvas-1300527.jpg",
@@ -57,7 +57,7 @@
 			},
 			{
 				"id":4,
-				"specialties":"Juliet Gobler specializes in litigation.",
+				"specialties":"Juliet Gobler specializes in litigation.  From Wikipedia:  In law, a settlement is a resolution between disputing parties about a legal case, reached either before or after court action begins. The term 'settlement' also has other meanings in the context of law. Structured settlements provide for future periodic payments, instead of a one time cash payment.",
                         	"contact_details":{
                         	        "name": "Juliet Gobler",
 					"image":"attractive-beautiful-beautiful-eyes-1405982.jpg",
