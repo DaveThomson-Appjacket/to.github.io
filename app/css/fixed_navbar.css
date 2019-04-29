@@ -1,6 +1,10 @@
 body {
   padding-top: 12vh;
   color: white;
+  font-family: Arial;
+}
+h1,h3 {
+  font-family: Arial;
 }
 .navbar {
 	background-color: white;
