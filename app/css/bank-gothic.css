@@ -3,7 +3,7 @@
         src: url("../fonts/bankgothic-regular.ttf");
 }
 
-.bank-gothic h1,span,h3,a{
+.bank-gothic h1,h3{
   font-family: "BankGothic", Arial;
   font-weight:normal;
   font-style:normal;
