@@ -56,7 +56,7 @@ function set_contact(data){
 	$.each(section_documents, function(index, value){
 		var contact_card = $("<div/>");
 		contacts_row.addClass("contacts-row").addClass("d-flex").addClass("flex-row").addClass("justify-content-around").addClass("flex-wrap");
-		contact_card.addClass("contact-card").addClass("col-md-5").addClass("col-xs-12");
+		contact_card.addClass("contact-card").addClass("col-md-2").addClass("col-xs-12");
 		contact_card.load("./app/html/contact_card.tmpl", function(){
 			var contact_image = $("<img/>");
 			var image_path = "./app/images/" + value["contact_details"]["image"];
@@ -64,7 +64,7 @@ function set_contact(data){
 			var phone_number = value["contact_details"]["phone_number"];
 			var email_address = value["contact_details"]["email_address"];
 			var name = value["contact_details"]["name"];
-
+			var position = value["contact_details"]["position"];
 			//$(contact_image).attr("src",image_path);
 			//var picture = $(this).find(".picture");
 			//picture.append($(contact_image));
@@ -93,6 +93,7 @@ function set_contact(data){
 			}
 			try{
 				$(this).find(".name").text(name);
+				$(this).find(".position").text(position);
 			}finally{
 				$(this).find(".phone_number").text(phone_number);
 				var phone_number_to_dial = phone_number.replace(/-/g,"").replace(/x/g,"p").replace(/ /g,"");
@@ -105,7 +106,7 @@ function set_contact(data){
 
 		$(contacts_row).append(contact_card);
 
-		if((index + 1)%2 == 0){
+		if((index + 1)%4 == 0){
 			$(contacts).append($(contacts_row));
 			contacts_row = $("<div/>");
 			contacts_row.addClass("contacts-row");
