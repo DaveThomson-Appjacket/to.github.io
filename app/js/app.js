@@ -188,7 +188,7 @@ function set_logo(data){
   		var wrapper = $("<div/>");
   		$(wrapper).addClass("brand");
   		var image = $("<img/>");
-  		$(image).attr("src",data["site-logo"]);
+  		$(image).attr("src","../images/" + data["site-logo"]);
   		$(image).addClass("heading-logo");
   		$(wrapper).append($(image));
   		$(div).append($(wrapper));
