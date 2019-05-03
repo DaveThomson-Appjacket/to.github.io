@@ -1,5 +1,5 @@
 function get_json(){
-  $.get("./app/json/site.json", function(data){
+  $.get("./../json/site.json", function(data){
 	  stuff(data);
   });
 }
