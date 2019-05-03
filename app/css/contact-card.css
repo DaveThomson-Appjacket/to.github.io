@@ -1,5 +1,5 @@
 .contact-card{
-	border-style: solid;
+	border-style: none;
 	border-width: thin;
 	border-color: black;
 	margin: 2em 1em 2em 1em;
@@ -15,4 +15,6 @@ h3 {
 }
 .span-center-aligned {
 	text-align: center;
+	color:black;
+	font-size:1.5em;
 }

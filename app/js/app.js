@@ -10,6 +10,7 @@ function stuff(data){
 	set_about(data);
 	set_contact(data);
 	set_search_data(data);
+	set_picture_and_general_contact(data);
     	//set_sections(data);
     	//set_map();
 }
@@ -45,8 +46,38 @@ function get_section(data, section_name){
         });
 	return section_details
 }
+function set_picture_and_general_contact(data){
+	var section_name = "general_inquiries";
+	var section_details = get_section(data, section_name);
+	var section_documents = section_details["documents"];
+
+	var contacts_row = $("<div/>");
+
+	$.each(section_documents, function(index, value) {
+		var contact_image = $("<img/>");
+                var specialties = value["specialties"];
+                var phone_number = value["contact_details"]["phone_number"];
+                var email_address = value["contact_details"]["email_address"];
+		var address = value["contact_details"]["address"];
+
+		var contact_card = $("<div/>");
+                contacts_row.addClass("contacts-row").addClass("d-flex").addClass("flex-row").addClass("justify-content-around").addClass("flex-wrap");
+                contact_card.addClass("contact-card");//.addClass("col-md-5").addClass("col-xs-12");
+                contact_card.load("./general_inquiries_contact_card.tmpl", function(){
+			$(this).find(".phone_number").text(phone_number);
+                        var phone_number_to_dial = phone_number.replace(/-/g,"").replace(/x/g,"p").replace(/ /g,"");
+                        $(this).find(".phone_number").attr("href","tel:+1" + phone_number_to_dial);
+                        $(this).find(".email_address").text(email_address);
+                        $(this).find(".email_address").attr("href","mailto:" + email_address);
+			$(this).find(".address").text(address);
+			$(".picture-secondary").append($(this));
+		});
+
+	});
+	$(".picture-secondary").width($(window).width()).height($(window).height());
+}
 function set_contact(data){
-	var section_name = "specialties"
+	var section_name = "specialties";
 	var section_details = get_section(data, section_name);
 	var section_documents = section_details["documents"];
 
@@ -56,7 +87,7 @@ function set_contact(data){
 	$.each(section_documents, function(index, value){
 		var contact_card = $("<div/>");
 		contacts_row.addClass("contacts-row").addClass("d-flex").addClass("flex-row").addClass("justify-content-around").addClass("flex-wrap");
-		contact_card.addClass("contact-card").addClass("col-md-5").addClass("col-xs-12");
+		contact_card.addClass("contact-card").addClass("col-md-2").addClass("col-xs-12");
 		contact_card.load("./app/html/contact_card.tmpl", function(){
 			var contact_image = $("<img/>");
 			var image_path = "./app/images/" + value["contact_details"]["image"];
@@ -64,15 +95,17 @@ function set_contact(data){
 			var phone_number = value["contact_details"]["phone_number"];
 			var email_address = value["contact_details"]["email_address"];
 			var name = value["contact_details"]["name"];
-
+			var position = value["contact_details"]["position"];
 			//$(contact_image).attr("src",image_path);
 			//var picture = $(this).find(".picture");
 			//picture.append($(contact_image));
 			if(specialties.toLowerCase() != "general inquiries"){
-				var specialties_span = $("<span/>");
-                        	specialties_span.text(specialties);
-				$(this).find(".specialty").append(specialties_span);
-			}else{
+			//	var specialties_span = $("<span/>");
+                       	// 	specialties_span.text(specialties);
+			//	$(this).find(".specialty").append(specialties_span);
+			}
+			/*
+			 * else{
 				$(this).find("img.picture").addClass("general-inquiries");
 				$(this).find(".specialty").remove();
 				var address = $("<div/>");
@@ -91,21 +124,24 @@ function set_contact(data){
 				$(this).find(".email_address_section").after($(address));
 				$(this).find(".name_section").remove();
 			}
+			*/
+
 			try{
 				$(this).find(".name").text(name);
+				$(this).find(".position").text(position);
 			}finally{
 				$(this).find(".phone_number").text(phone_number);
 				var phone_number_to_dial = phone_number.replace(/-/g,"").replace(/x/g,"p").replace(/ /g,"");
 				$(this).find(".phone_number").attr("href","tel:+1" + phone_number_to_dial);
 				$(this).find(".email_address").text(email_address);
 				$(this).find(".email_address").attr("href","mailto:" + email_address);
-				$(this).find("img.picture").attr("src",image_path);
+		//		$(this).find("img.picture").attr("src",image_path);
 			}
 		});
 
 		$(contacts_row).append(contact_card);
 
-		if((index + 1)%2 == 0){
+		if((index + 1)%4 == 0){
 			$(contacts).append($(contacts_row));
 			contacts_row = $("<div/>");
 			contacts_row.addClass("contacts-row");
@@ -114,7 +150,7 @@ function set_contact(data){
 		}
 	});
 
-        $(".contact").width($("nav").width());
+        //$(".contact").width($("nav").width());
 }
 function set_search_data(data){
 	var content_sections = data["content-sections"];

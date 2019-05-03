@@ -27,9 +27,10 @@
 			[
 			{
 				"id":1,
-				"specialties":"Kevin Thomson specializes in contract and music rights.",
+				"specialties":"",
 				"contact_details":{
 					"name": "Kevin Thomson",
+					"position":"Partner",
 					"image":"adult-beautiful-canvas-1300527.jpg",
 					"phone_number":"212-335-0751 x 501",
 					"email_address":"kevin@thomsonollunga.com"
@@ -37,9 +38,10 @@
 			},
 			{
 				"id":2,
-				"specialties":"Samuel Ollunga is licensed in New York.",
+				"specialties":"",
                 	        "contact_details":{
                        		         "name": "Samuel Ollunga",
+					 "position":"Partner",
 					 "image":"adult-beautiful-canvas-1300527.jpg",
                        		         "phone_number":"212-335-0751 x 503",
                                 	 "email_address":"sam@thomsonollunga.com"
@@ -47,9 +49,10 @@
 			},
 			{
 				"id":3,
-				"specialties": "Alwyn Phillips specializes in immigration law.  From Wikipedia:  Immigration is the international movement of people into a destination country of which they are not natives or where they do not possess citizenship in order to settle or reside there, especially as permanent residents or naturalized citizens, or to take up employment as a migrant worker or temporarily as a foreign worker.",
+				"specialties": "",
                         	"contact_details":{
                                 	"name": "Alwyn Phillips",
+					"position":"Senior Associate",
 					"image":"adult-beautiful-canvas-1300527.jpg",
                                 	"phone_number":"212-335-0751 x 504",
                                 	"email_address":"alwyn@thomsonollunga.com"
@@ -57,27 +60,33 @@
 			},
 			{
 				"id":4,
-				"specialties":"Juliet Gobler specializes in litigation.  From Wikipedia:  In law, a settlement is a resolution between disputing parties about a legal case, reached either before or after court action begins. The term 'settlement' also has other meanings in the context of law. Structured settlements provide for future periodic payments, instead of a one time cash payment.",
+				"specialties":"",
                         	"contact_details":{
                         	        "name": "Juliet Gobler",
+					"position":"Senior Associate",
 					"image":"attractive-beautiful-beautiful-eyes-1405982.jpg",
                                		"phone_number":"212-335-0751 x 505",
                                 	"email_address": "juliet@thomsonollunga.com"
                         	}
-			},
-			{
-				"id":5,
-				"specialties":"General Inquiries",
-                	        "contact_details":{
-                	                "name": "General Inquiries",
-					"image":"thomsonollungallp-logo.png",
-                	                "phone_number":"212-335-0751",
-                	                "email_address":"admin@thomsonollunga.com",
-					"address": "747 Third Avenue, 2nd Floor, New York, NY 10017"
-                	        }
-			}
-		]
+			}]
 		}
+    },
+    {
+    "section":"general_inquiries",
+    "section-details":{
+		"documents":[{
+			"id":5,
+			"specialties":"General Inquiries",
+                        "contact_details":{
+                                "name": "General Inquiries",
+				"image":"thomsonollungallp-logo.png",
+                                "phone_number":"212-335-0751",
+                                "email_address":"admin@thomsonollunga.com",
+				"address": "747 Third Avenue, 2nd Floor, New York, NY 10017"
+                        }
+		}]
+		
+	}
     }
     ]
 }
