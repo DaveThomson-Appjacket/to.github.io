@@ -74,7 +74,7 @@
     {
     "section":"general_inquiries",
     "section-details":{
-		"documents":{
+		"documents":[{
 			"id":5,
 			"specialties":"General Inquiries",
                         "contact_details":{
@@ -84,7 +84,7 @@
                                 "email_address":"admin@thomsonollunga.com",
 				"address": "747 Third Avenue, 2nd Floor, New York, NY 10017"
                         }
-		}
+		}]
 		
 	}
     }

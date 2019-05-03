@@ -1,3 +1,11 @@
+.picture-secondary{
+	background-image: url("../images/new-york-691072_1920.jpg");
+	width: auto;	
+}
+.thomson-ollunga-logo {
+	max-height: 30vh;
+	width: auto;
+}
 .name_section{
 	max-width: 100%;
 }
@@ -24,6 +32,7 @@
 	border-style: none;
 }
 */
+	/*
 @media screen and (max-device-width: 1200px){
 	img.picture {
                 height: 10vh;
@@ -45,8 +54,10 @@
                 max-height: 6vh;
         }
 }
+*/
 /* ----------- Non-Retina Screens ----------- */
-@media screen 
+/*
+ * @media screen 
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 1) { 
@@ -58,10 +69,11 @@
 	img.picture.general-inquiries {
         	max-height: 6vh;
 	}
-}
-
+	}
+ */
 /* ----------- Retina Screens ----------- */
-@media screen 
+/*
+ * @media screen 
   and (min-device-width: 1200px) 
   and (max-device-width: 1600px) 
   and (-webkit-min-device-pixel-ratio: 2)
@@ -75,7 +87,7 @@
                 max-height: 12vh;
         }
 }
-
+*/
 .specialty {
 	padding: 2em;
 }
