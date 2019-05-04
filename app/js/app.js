@@ -88,7 +88,7 @@ function set_contact(data){
 		var contact_card = $("<div/>");
 		contacts_row.addClass("contacts-row").addClass("d-flex").addClass("flex-row").addClass("justify-content-around").addClass("flex-wrap");
 		contact_card.addClass("contact-card").addClass("col-md-2").addClass("col-xs-12");
-		contact_card.load("./app/html/contact_card.tmpl", function(){
+		contact_card.load("./contact_card.tmpl", function(){
 			var contact_image = $("<img/>");
 			var image_path = "./app/images/" + value["contact_details"]["image"];
 			var specialties = value["specialties"];
