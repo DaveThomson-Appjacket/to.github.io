@@ -1,4 +1,8 @@
 @media screen and (max-device-width: 1024px){
+	.about-section > h1 {
+		margin-top:5vh;
+		padding-bottom: 2vh;
+	}
 	.thomson-ollunga-logo {
                 max-height:7vh;
         }
