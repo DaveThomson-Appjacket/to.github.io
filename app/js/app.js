@@ -65,7 +65,7 @@ function set_picture_and_general_contact(data){
                 contact_card.addClass("contact-card");//.addClass("col-md-5").addClass("col-xs-12");
                 contact_card.load("./general_inquiries_contact_card.tmpl", function(){
 			$(this).find(".phone_number").text(phone_number);
-                        var phone_number_to_dial = phone_number.replace(/-/g,"").replace(/x/g,"p").replace(/ /g,"");
+                        var phone_number_to_dial = phone_number.replace(/-/g,"").replace(/x/g,"#").replace(/ /g,"");
                         $(this).find(".phone_number").attr("href","tel:+1" + phone_number_to_dial);
                         $(this).find(".email_address").text(email_address);
                         $(this).find(".email_address").attr("href","mailto:" + email_address);
@@ -131,7 +131,7 @@ function set_contact(data){
 				$(this).find(".position").text(position);
 			}finally{
 				$(this).find(".phone_number").text(phone_number);
-				var phone_number_to_dial = phone_number.replace(/-/g,"").replace(/x/g,"p").replace(/ /g,"");
+				var phone_number_to_dial = phone_number.replace(/-/g,"").replace(/x/g,"#").replace(/ /g,"");
 				$(this).find(".phone_number").attr("href","tel:+1" + phone_number_to_dial);
 				$(this).find(".email_address").text(email_address);
 				$(this).find(".email_address").attr("href","mailto:" + email_address);
