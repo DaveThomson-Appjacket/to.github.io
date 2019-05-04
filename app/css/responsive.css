@@ -1,4 +1,19 @@
-@media screen and (max-device-width: 1200px){
+@media screen and (max-device-width: 1024px){
+	.thomson-ollunga-logo {
+                max-height:7vh;
+        }
+        img.picture {
+                height: 10vh;
+                width: auto;
+                margin-top: 2.25em;
+        }
+        img.picture.general-inquiries {
+                max-height: 3vh;
+        }
+
+}
+@media screen and (min-device-width:1024px )
+	and (max-device-width: 1200px){
 	.thomson-ollunga-logo {
 		max-height:8vh;
 	}
