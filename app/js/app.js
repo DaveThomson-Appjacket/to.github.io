@@ -11,8 +11,6 @@ function stuff(data){
 	set_contact(data);
 	set_search_data(data);
 	set_picture_and_general_contact(data);
-    	//set_sections(data);
-    	//set_map();
 }
 function set_about(data){
 	var content_sections = data["content-sections"];
@@ -30,7 +28,6 @@ function set_about(data){
 			var section_details = value["section-details"][0];
 			var content = section_details["content"];
 			var item = content[0];
-			//$(heading).text("about");
 			$(body).text(item["item-content"])
 		}
 	});
@@ -62,7 +59,7 @@ function set_picture_and_general_contact(data){
 
 		var contact_card = $("<div/>");
                 contacts_row.addClass("contacts-row").addClass("d-flex").addClass("flex-row").addClass("justify-content-around").addClass("flex-wrap");
-                contact_card.addClass("contact-card");//.addClass("col-md-5").addClass("col-xs-12");
+                contact_card.addClass("contact-card");
                 contact_card.load("./general_inquiries_contact_card.tmpl", function(){
 			$(this).find(".phone_number").text(phone_number);
                         var phone_number_to_dial = phone_number.replace(/-/g,"").replace(/x/g,"#").replace(/ /g,"");
@@ -74,7 +71,8 @@ function set_picture_and_general_contact(data){
 		});
 
 	});
-	$(".picture-secondary").width($(window).width()).height($(window).height());
+	$(".picture-secondary").width($(window).width());
+	$(".picture-secondary").height($(window).height() - $(".navbar").height() - ($(".blog-footer").height()*2.5));
 }
 function set_contact(data){
 	var section_name = "specialties";
@@ -96,36 +94,7 @@ function set_contact(data){
 			var email_address = value["contact_details"]["email_address"];
 			var name = value["contact_details"]["name"];
 			var position = value["contact_details"]["position"];
-			//$(contact_image).attr("src",image_path);
-			//var picture = $(this).find(".picture");
-			//picture.append($(contact_image));
-			if(specialties.toLowerCase() != "general inquiries"){
-			//	var specialties_span = $("<span/>");
-                       	// 	specialties_span.text(specialties);
-			//	$(this).find(".specialty").append(specialties_span);
-			}
-			/*
-			 * else{
-				$(this).find("img.picture").addClass("general-inquiries");
-				$(this).find(".specialty").remove();
-				var address = $("<div/>");
-				var address_heading = $("<h3/>");
-				var address_span = $("<span/>");
-
-				$(address).addClass("contact_details_section");
-				$(address_heading).addClass("h1-center-aligned");
-				$(address_span).addClass("span-center-aligned");
-
-				$(address_heading).text("Address:");
-				$(address_span).text(value["contact_details"]["address"]);
-				$(address).append($(address_heading));
-				$(address).append($(address_span));
-				
-				$(this).find(".email_address_section").after($(address));
-				$(this).find(".name_section").remove();
-			}
-			*/
-
+			
 			try{
 				$(this).find(".name").text(name);
 				$(this).find(".position").text(position);
@@ -135,7 +104,6 @@ function set_contact(data){
 				$(this).find(".phone_number").attr("href","tel:+1" + phone_number_to_dial);
 				$(this).find(".email_address").text(email_address);
 				$(this).find(".email_address").attr("href","mailto:" + email_address);
-		//		$(this).find("img.picture").attr("src",image_path);
 			}
 		});
 
@@ -149,8 +117,6 @@ function set_contact(data){
 			$(contacts).append($(contacts_row));
 		}
 	});
-
-        //$(".contact").width($("nav").width());
 }
 function set_search_data(data){
 	var content_sections = data["content-sections"];
@@ -196,18 +162,12 @@ function set_logo(data){
   		$(insertion_point).before(div);
 }
 function set_sections(data){
-  //var main = $(".about");
   var canvas = $("<div/>");
-//	console.log($(main).width());
-//	console.log($(main).height());
   $(canvas).width($(main).width()).height($(window).height());
 	$(canvas).addClass("canvas");
-  //$(canvas).css("background-color","rgba(255, 255, 255, 0.5)");
 	$(main).append(canvas);
 	$(main).addClass("main-class");
-  //////$(main).css({"background-image":"url(./app/images/new-york-city-336475_1920.jpg)"});
 
-	////$(canvas).css({"justify-content":"center"});
   $.each(data["content-sections"], function(key, value){
     var row = $("<div/>");
 	$(row).width("100%");
@@ -216,10 +176,9 @@ function set_sections(data){
     var span_paragraphs = $("<div/>");
     
     $(row).addClass("container").addClass("row");
-        ////(main).append(canvas);
     $(span_heading).text(value["section"]);
 
-	  $(span_heading).css("color","white");
+    $(span_heading).css("color","white");
 
     var section_name = "";
 
@@ -228,20 +187,6 @@ function set_sections(data){
     $.each(value["paragraphs"], function(key, value){
 	    var outer_key = key;
       if(value["content"].length == 1){
-        /*
-        var span = $("<span/>");
-        $.each(value["content"], function(key, value){
-          var item = $("<p/>");
-          console.log("." + value["item-content"] + ".");
-          if(value["item-title"] == ""){
-            item.text(value["item-content"]);
-          }else{
-            item.text(value["item-title"] + ":\t\t" + value["item-content"]);      
-            span.append(item);
-          }
-        });
-        $(span_paragraphs).append(span);
-        */
       }else{
         
         var heading = $("<span/>");
@@ -287,7 +232,6 @@ function set_sections(data){
 	}
         $(span_paragraphs).append(current_row);
         
-        //$(span_paragraphs).append(current_row);
       }
       });
 	  $(div).css("background-color","rgba(0, 0, 0, 0.7)");
@@ -295,33 +239,11 @@ function set_sections(data){
     $(div).append(span_paragraphs);
 	  $(div).addClass("content-with-padding");
 	  var div2 = $("<div/>");
-	  //$(div2).css("background-color","rgba(255, 255, 255, 0.5)");
 	  $(div2).append(div);
 	  $(div2).addClass("content-with-padding");
     $(row).append(div2);
     $(canvas).append(row);
-	  //$(canvas).addClass("content-section");
   });
-}
-function set_onscroll_sticky_header(){
-	window.onscroll = function() {cleanupSticky()};
-
-	// Get the navbar
-	var navbar = $(".nav-scroller.py-1.mb-2")[0];
-
-	// Get the offset position of the navbar
-	var sticky = $(navbar).position().top;
-
-	console.log(sticky);
-
-	// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-	function cleanupSticky() {
-	  if (window.pageYOffset >= sticky) {
-	    $(navbar).addClass("sticky");
-	  } else {
-	    $(navbar).removeClass("sticky");
-	  }
-	}
 }
 var search_index = elasticlunr(function () {
     this.addField('specialties');
@@ -330,6 +252,5 @@ var search_index = elasticlunr(function () {
 });
 $(document).ready(function(){
   get_json();
-  //set_onscroll_sticky_header();
 });
 window.onresize = function(){ location.reload(); }
