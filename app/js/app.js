@@ -132,8 +132,6 @@ function set_search_data(data){
 		search_index.addDoc(doc);
 	});
 }
-function set_map(){
-}
 function set_title(data){
   $("site-title").text(data["site-title"]);
 }
@@ -160,90 +158,6 @@ function set_logo(data){
   		$(div).append($(wrapper));
   		var insertion_point = $(".nav").children()[half_len_nav];
   		$(insertion_point).before(div);
-}
-function set_sections(data){
-  var canvas = $("<div/>");
-  $(canvas).width($(main).width()).height($(window).height());
-	$(canvas).addClass("canvas");
-	$(main).append(canvas);
-	$(main).addClass("main-class");
-
-  $.each(data["content-sections"], function(key, value){
-    var row = $("<div/>");
-	$(row).width("100%");
-	  var div = $("<div/>");
-    var span_heading = $("<h1/>");
-    var span_paragraphs = $("<div/>");
-    
-    $(row).addClass("container").addClass("row");
-    $(span_heading).text(value["section"]);
-
-    $(span_heading).css("color","white");
-
-    var section_name = "";
-
-    var current_row = $("<div/>");
-    $(current_row).addClass("row");
-    $.each(value["paragraphs"], function(key, value){
-	    var outer_key = key;
-      if(value["content"].length == 1){
-      }else{
-        
-        var heading = $("<span/>");
-        heading.addClass("heading");
-        heading.text(value["heading"]);
-        
-        var contact_card = $("<div/>");
-        contact_card.addClass("col");
-        $(heading).css("color","white");
-        if(heading.text() != ""){
-          contact_card.append(heading);
-        }
-	      contact_card.append("</br>");
-        $.each(value["content"], function(key, value){
-          var item = $("<span/>");
-		$(item).css("color","white");
-          if(value["item-title"] == ""){
-            item.text(value["item-content"]);
-	    section_name = "about";
-          }else{
-		  if(value["item-title"]=="email" || value["item-title"]=="general email address"){
-			  var link = $("<a/>");
-			  $(link).attr("href","mailto:"+value["item-content"]+"");
-			  $(link).text(value["item-content"]);
-
-			  item.text(value["item-title"] + ":\t\t");
-			  $(item).append(link); 
-		  }else{
-            		item.text(value["item-title"] + ":\t\t" + value["item-content"]);      
-		  }
-          }
-          contact_card.append(item);
-		contact_card.append("</br>");
-		contact_card.addClass("content-with-padding");
-        });
-        if((key-1) % 2 != 0){
-          $(current_row).append(contact_card)
-        }else {
-          $(current_row).append(contact_card)
-          $(span_paragraphs).append(current_row);
-          current_row = $("<div/>");
-          $(current_row).addClass("row");
-	}
-        $(span_paragraphs).append(current_row);
-        
-      }
-      });
-	  $(div).css("background-color","rgba(0, 0, 0, 0.7)");
-    $(div).append(span_heading);
-    $(div).append(span_paragraphs);
-	  $(div).addClass("content-with-padding");
-	  var div2 = $("<div/>");
-	  $(div2).append(div);
-	  $(div2).addClass("content-with-padding");
-    $(row).append(div2);
-    $(canvas).append(row);
-  });
 }
 var search_index = elasticlunr(function () {
     this.addField('specialties');
